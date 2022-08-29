@@ -2,8 +2,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import FlexibleDiv from '../flexibleDiv/flexibleDiv.component';
-import Image from '../image/image.component';
-import img from "../../assets/images/product-1.jpg"
+import {Image} from '../image/image.component';
 import ToyImg from "../../assets/images/toys.jpg"
 import { Text } from '../typography/typography.component';
 const Card = styled.div`
@@ -18,7 +17,7 @@ const Categories = () => {
             
             {[0,1,2].map(index=>(
                 <Card key={index}>
-                <Image src={ToyImg} width={'100%'}  />
+                <Image src={ToyImg} width={'100%'} radius={'5px'} />
                 <FlexibleDiv>
                     <FlexibleDiv width={'50%'} justifyContent={'flex-start'} >
                         <Text margin={"0px"} fontSize={"16px"} resFontSize={"smaller"} >
