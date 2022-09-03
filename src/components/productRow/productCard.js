@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { CartIcon } from "../icons";
@@ -6,7 +7,8 @@ import { Cart, ProductCardStyle, ProductImage, ProductPrice, ProductTitle } from
 const ProductCard = ({img,title,price}) => {
     return ( 
         <>
-        <ProductCardStyle>
+    <Link to={`/product-details/${title}`} >
+    <ProductCardStyle>
         <FlexibleDiv>
             <ProductImage width={'100%'} height={'70%'} objectFit={"cover"} src={img} alt={title.slice(0,30)} />
         </FlexibleDiv>
@@ -18,6 +20,7 @@ const ProductCard = ({img,title,price}) => {
             <CartIcon/>
         </Cart>
         </ProductCardStyle>
+    </Link>
         </>
      );
 }

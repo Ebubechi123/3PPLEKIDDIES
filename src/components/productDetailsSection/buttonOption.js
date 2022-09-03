@@ -2,7 +2,7 @@ import Button from "../button/button.component";
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { CartIcon } from "../icons";
 
-const ButtonOption = () => {
+const ButtonOption = ({setToggleOrder}) => {
   return (
     <>
       <FlexibleDiv padding={"12px"}>
@@ -17,7 +17,7 @@ const ButtonOption = () => {
           >
             <CartIcon /> Add to Bag
           </Button>
-          <Button padding={"12px"} background={"black"} width={"120px"}>
+          <Button onClick={()=>{setToggleOrder(true)}} padding={"12px"} background={"black"} width={"120px"}>
             Order
           </Button>
         </FlexibleDiv>

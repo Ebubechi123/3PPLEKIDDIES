@@ -45,6 +45,7 @@ max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : "")};
     flex-direction: ${({ breakPointdirection }) => (breakPointdirection ? breakPointdirection : "row")};
     padding: ${({breakPointPadding})=>breakPointPadding ? breakPointPadding :""};
     left: ${({breakPointLeft})=>breakPointLeft ? breakPointLeft :""};
+    bottom: ${({breakPointBottom})=> breakPointBottom ? breakPointBottom :""} ;
  }
  @media screen and (max-width: ${({resPoint})=>resPoint ? resPoint :''} ) {
     width: ${({ reswidth }) => (reswidth ? reswidth : "")};
@@ -58,6 +59,7 @@ max-height: ${({ maxHeight }) => (maxHeight ? maxHeight : "")};
     gap: ${({resgap})=>resgap ?resgap :''};
     flex-direction: ${({ resdirection }) => (resdirection ? resdirection : "row")};
     padding: ${({resPadding})=>resPadding ? resPadding :'0px'};
+  
  }
 `;
 
@@ -104,6 +106,7 @@ const FlexibleDiv = ({
   breakPointJustifyContent,
   breakPointPadding,
   breakPointLeft,
+  breakPointBottom ,
   reswidth,
   resAlign,
   resDisplay,
@@ -170,6 +173,7 @@ const FlexibleDiv = ({
         resgap={resgap}
         reswidth={reswidth}
         breakPointPadding={breakPointPadding}
+        breakPointBottom ={breakPointBottom }
         resPadding={resPadding}
         minWidth={minWidth}
         onClick={onClick}

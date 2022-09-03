@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { CartIcon, CloseIcon, MenuIcon } from "../icons";
 import { Nav_Links } from "./navLinks";
 import {
@@ -46,7 +47,9 @@ const NavigationBar = () => {
           <LinkSection>
             <LinkWrapper minHeight={toggleMenu ? "400px" : ""}>
               {Nav_Links.map(({ link, path }) => (
+              <>
                 <NavLinks>{link}</NavLinks>
+              </>
               ))}
             </LinkWrapper>
           </LinkSection>
