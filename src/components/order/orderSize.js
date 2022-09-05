@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { Text } from "../typography/typography.component";
-const Select = styled.select`
+export const Select = styled.select`
   width: 100%;
   outline: none;
   border: none;
 `;
 
-const Option = styled.option`
+export const Option = styled.option`
   width: 100%;
   padding: 12px;
   color: black;

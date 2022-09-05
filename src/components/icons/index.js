@@ -1,6 +1,6 @@
 import {FaShoppingBag,FaBars,FaLeaf} from "react-icons/fa"
 import {AiOutlineClose} from "react-icons/ai"
-import {MdOutlineDeliveryDining} from "react-icons/md"
+import {MdOutlineDeliveryDining,MdDelete,MdInfo} from "react-icons/md"
 import {GiSparkles} from "react-icons/gi"
 
 
@@ -21,4 +21,10 @@ export const LeafIcon =({size,onClick,color,style,cursor})=>{
 }
 export const SparkleIcon =({size,onClick,color,style,cursor})=>{
     return <GiSparkles size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
+}
+export const DeleteIcon =({size,onClick,color,style,cursor})=>{
+    return <MdDelete size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
+}
+export const InfoIcon =({size,onClick,color,style,cursor})=>{
+    return <MdInfo size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
 }
