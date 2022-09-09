@@ -18,21 +18,21 @@ const Col = styled.div`
 const featuresArray = [
   {
     name: "Fast Delivery",
-    icon: <DeliveryIcon size={22} />,
+    icon: <DeliveryIcon size={22} color={"white"} />,
   },
   {
     name: "Organic Cotton Clothing",
-    icon: <LeafIcon size={18} />,
+    icon: <LeafIcon size={18} color={"white"}  />,
   },
   {
     name: "Quality Accessories",
-    icon: <SparkleIcon size={18} />,
+    icon: <SparkleIcon size={18} color={"white"}  />,
   },
 ];
 const Features = () => {
   return (
     <>
-      <FlexibleDiv margin={"50px 0px"}>
+      <FlexibleDiv margin={"50px 0px"} bg={"blue"} padding={"30px 0px"} >
         <FlexibleDiv
           width={"100%"}
           breakPoint={"680px"}
@@ -40,14 +40,14 @@ const Features = () => {
         >
           {featuresArray.map(({ name, icon }) => (
             <Col>
-              <span>{icon}</span>
+              <span color="white" >{icon}</span>
 
               <Text
                 resFontSize={"xx-small"}
                 margin={"0px"}
                 fontSize={"medium"}
                 fontWeight={"500"}
-                color={"grey"}
+                color={"white"}
               >
                 {name}
               </Text>

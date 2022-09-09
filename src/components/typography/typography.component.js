@@ -12,7 +12,9 @@ font-size:${({fontSize})=>fontSize ? fontSize : fontSizes.desktop_header};
 line-height:${({lineHeight})=>lineHeight ? lineHeight : ''};
 font-weight:${({fontWeight})=>fontWeight ? fontWeight : ''};
 font-family:${({fontFamily})=>fontFamily ? fontFamily : ''};
-
+margin: ${({margin})=>margin ? margin :''};
+margin-left:${({marginLeft})=>marginLeft? marginLeft :""};
+margin-right:${({marginRight})=>marginRight? marginRight :""};
 @media only screen and (max-width:680px){
     font-size:${({resFontSize})=> resFontSize ? resFontSize : fontSizes.mobile_header};
 }

@@ -1,45 +1,45 @@
 export const Nav_Links = [
   {
     link: "Home",
-    path: "/home",
+    path: "/",
   },
   {
     link: "Shop",
     // subLink: [
     //   {
     //     link: "Female",
-    //     path: "/home",
+    //     path: "/",
     //   },
     //   {
     //     link: "Toys",
-    //     path: "/home",
+    //     path: "/",
     //   },
     //   {
     //     link: "Accessories",
-    //     path: "/home",
+    //     path: "/",
     //   },
      
     // ],
   },
   {
     link: "About us",
-    path: "/home",
+    path: "/",
   },
   {
     link: "Female",
-    path: "/home",
+    path: "/",
   },
   {
     link: "Toys",
-    path: "/home",
+    path: "/",
   },
   {
     link: "Accessories",
-    path: "/home",
+    path: "/",
   },
  
   {
     link: "Contact",
-    path: "/home",
+    path: "/",
   },
 ];

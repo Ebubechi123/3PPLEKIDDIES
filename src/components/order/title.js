@@ -1,11 +1,11 @@
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { OrderTitle } from "./style";
 
-const Title = () => {
+const Title = ({title}) => {
     return ( 
         <FlexibleDiv justifyContent={'flex-start'} >
             <OrderTitle>
-              Place an Order
+             {title ? title :'Place an Order'}
             </OrderTitle>
           </FlexibleDiv>
      );

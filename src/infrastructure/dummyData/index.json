@@ -1,0 +1,12 @@
+ [
+    {
+        "id":1,
+      "name": "Slim Fit T-Shirt",
+      "category": "Boys",
+      "price": 500,
+      "sizes": ["XL", "L", "LL", "M", "ML"],
+      "colors":["red","blue","coral"]
+    }
+  ]
+
+

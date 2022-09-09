@@ -25,6 +25,8 @@ export const OrderContainer = styled.div`
   float: right;
   box-shadow: 0px 8px 1px 0px lightgrey;
   transition: transform 0.7s ease-in-out;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @media only screen and (max-width: 740px) {
     position: absolute;
     width: 100%;

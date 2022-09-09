@@ -20,8 +20,8 @@ const Boys = () => {
                 </Text>
             </FlexibleDiv>
             <ProductRow>
-                    {ProductData.map(({img,title,price})=>(
-                        <ProductCard img={img} title={title} price={price} />
+                    {Object(ProductData).map(({img,title,price})=>(
+                        <ProductCard img={img} title={title} price={price} product={ProductData} />
                     ))}
                 </ProductRow>
         </ProductSectionStyle>

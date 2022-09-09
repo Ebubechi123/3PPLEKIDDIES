@@ -1,6 +1,6 @@
-import {FaShoppingBag,FaBars,FaLeaf} from "react-icons/fa"
-import {AiOutlineClose} from "react-icons/ai"
-import {MdOutlineDeliveryDining,MdDelete,MdInfo} from "react-icons/md"
+import {FaShoppingBag,FaBars,FaLeaf,} from "react-icons/fa"
+import {AiOutlineClose,} from "react-icons/ai"
+import {MdOutlineDeliveryDining,MdDelete,MdInfo,MdArrowDropDown,MdArrowDropUp} from "react-icons/md"
 import {GiSparkles} from "react-icons/gi"
 
 
@@ -27,4 +27,10 @@ export const DeleteIcon =({size,onClick,color,style,cursor})=>{
 }
 export const InfoIcon =({size,onClick,color,style,cursor})=>{
     return <MdInfo size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
+}
+export const ArrowDownIcon =({size,onClick,color,style,cursor})=>{
+    return <MdArrowDropDown size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
+}
+export const ArrowUpIcon =({size,onClick,color,style,cursor})=>{
+    return <MdArrowDropUp size={size} onClick={onClick} color={color} style={style} cursor={cursor} />
 }

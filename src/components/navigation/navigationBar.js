@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
+import { useNavigate,Link } from "react-router-dom";
 import { CartIcon, CloseIcon, MenuIcon } from "../icons";
+import Logo from "../logo/logo";
 import { Nav_Links } from "./navLinks";
 import {
   CartSection,
@@ -16,15 +17,17 @@ import {
 
 const NavigationBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const navigation = useNavigate()
   return (
     <>
-      <NavBarWrapper>
+      <NavBarWrapper shadow={toggleMenu ? "0px 0px 2px 1px lightgrey" : ""} >
         <NavBarStyles>
           <MenuBarSection>
             {/* Open Icon */}
             <MenuIcon
               size={18}
               cursor={"pointer"}
+              color={"white"}
               onClick={() => {
                 setToggleMenu(true);
               }}
@@ -33,6 +36,7 @@ const NavigationBar = () => {
             {/* Close Icon */}
             <CloseIcon
               cursor={"pointer"}
+              color={"white"}
               style={{ display: `${toggleMenu ? "block" : "none"}` }}
               size={18}
               onClick={() => {
@@ -41,24 +45,31 @@ const NavigationBar = () => {
             />
           </MenuBarSection>
           <LogoSection>
-            <h4>Logo</h4>
+            <Logo/>
           </LogoSection>
 
           <LinkSection>
-            <LinkWrapper minHeight={toggleMenu ? "400px" : ""}>
-              {Nav_Links.map(({ link, path }) => (
-              <>
-                <NavLinks>{link}</NavLinks>
-              </>
+            <LinkWrapper minHeight={toggleMenu ? "100vh" : ""}>
+              {Nav_Links.map(({ link, path },index) => (
+            
+                <Link to={`${path}`} key={index}  onClick={()=>{setToggleMenu(false)}}>
+                <NavLinks key={index}>{link}</NavLinks>
+                </Link>
+            
               ))}
             </LinkWrapper>
           </LinkSection>
 
           <CartSection>
-            <CartIcon cursor={"pointer"} />
-            <CartText cursor={"pointer"} fontSize={"small"} fontWeight={"600"}>
+          <Link to={'/cart'}>
+          <CartIcon cursor={"pointer"} color={"white"} />
+          </Link>
+
+           <Link  to={'/'}>
+           <CartText cursor={"pointer"} color={"white"} fontSize={"small"} fontWeight={"600"}>
               Shopping Bag
             </CartText>
+           </Link>
           </CartSection>
         </NavBarStyles>
       </NavBarWrapper>

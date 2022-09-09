@@ -3,13 +3,13 @@ import Button from "../button/button.component";
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { Text } from "../typography/typography.component";
 
-const Proceed = ({ totalCost }) => {
+const Proceed = ({ totalCost,padding,bottom,position }) => {
   return (
     <>
       <FlexibleDiv
-        position={"absolute"}
-        bottom={"20px"}
-        padding={"23px"}
+        position={position ? position :"absolute"}
+        bottom={bottom ? bottom :"20px"}
+        padding={padding ? padding :"23px"}
         left={"0px"}
         breakPoint={"740px"}
         breakPointBottom={"auto"}
