@@ -8,12 +8,13 @@ top: 1px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 40vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom-right-radius: 150% 200px;
-  border-bottom-left-radius: 150% 200px;
+  @media screen and (max-width:680px) {
+    height: 45vh;
+  }
 `;
 
  export const Curve = styled.div`
@@ -29,4 +30,23 @@ margin: auto 0px;
 /* right: 0px; */
 
 border-collapse: collapse;
+`
+
+
+
+export const FilterUl = styled.ul`
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 0px;
+`
+
+export const FilterList = styled.li`
+list-style: none;
+margin-top: 9px;
+cursor: pointer;
+font-size: smaller;
+font-weight: 400;
 `

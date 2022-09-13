@@ -30,8 +30,8 @@ const Hero = () => {
                   color={"black"}
                   width="120px"
                   radius={"2px"}
-                  hoverBackground={"black"}
-                  hoverBorder={"1px solid black"}
+                  hoverBackground={"#9705cdd9"}
+                  hoverBorder={"none"}
                   hoverColor={"white"}
                 >
                   Shop Now

@@ -4,6 +4,7 @@ import FlexibleDiv from "../../components/flexibleDiv/flexibleDiv.component";
 import { Link } from "react-router-dom";
 import { Text } from "../../components/typography/typography.component";
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
+import { colorTheme } from "../../infrastructure/theme/colors";
 
 const CheckSection = ({ ToggleHandler }) => {
   let Subtotal = 500;
@@ -115,10 +116,10 @@ const CheckSection = ({ ToggleHandler }) => {
             <Button
               width={"90%"}
               radius={"5px"}
-              background={"orange"}
+              background={colorTheme.primary_color}
               color={"white"}
               padding={"10px"}
-              hoverBackground={"orange"}
+              hoverBackground={colorTheme.primary_color}
               hoverColor={"white"}
               hoverBorder={"none"}
               onClick={() => {ToggleHandler()}}

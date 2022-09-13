@@ -2,6 +2,7 @@ import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import styled from "styled-components";
 import { DeliveryIcon, LeafIcon, SparkleIcon } from "../icons";
 import { Text } from "../typography/typography.component";
+import { colorTheme } from "../../infrastructure/theme/colors";
 const Col = styled.div`
   width: 30%;
   display: flex;
@@ -32,7 +33,7 @@ const featuresArray = [
 const Features = () => {
   return (
     <>
-      <FlexibleDiv margin={"50px 0px"} bg={"blue"} padding={"30px 0px"} >
+      <FlexibleDiv margin={"50px 0px"} bg={colorTheme.primary_color} padding={"30px 0px"} >
         <FlexibleDiv
           width={"100%"}
           breakPoint={"680px"}

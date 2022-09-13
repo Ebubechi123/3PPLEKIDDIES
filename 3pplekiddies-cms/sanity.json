@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "3pplekiddieshomecms"
+    "name": "3pplekiddies-cms"
   },
   "api": {
-    "projectId": "q7qdzays",
+    "projectId": "e57vke7r",
     "dataset": "production"
   },
   "plugins": [

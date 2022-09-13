@@ -1,5 +1,5 @@
 export const colorTheme ={
-    primary_color:'blue',
+    primary_color:'#9705cd',
     secondary_color:'black',
     black:{
         strong:'#000',

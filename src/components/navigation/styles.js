@@ -6,7 +6,7 @@ import { Text } from "../typography/typography.component";
 export const NavBarWrapper = styled.div`
   width: 100%;
   height: 65px;
-  background-color: blue;
+  background-color:${colorTheme.primary_color};
   position: fixed;
   z-index: 999;
   top: 0px;

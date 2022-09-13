@@ -38,6 +38,9 @@ const TestHero = () => {
             width={"120px"}
             color={"white"}
             radius={"4px"}
+            hoverBackground={"#9705cdd9"}
+            hoverBorder={"none"}
+            hoverColor={"white"}
           >
             Shop Now
           </Button>
