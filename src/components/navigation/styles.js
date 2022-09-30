@@ -54,7 +54,7 @@ export const LinkWrapper = styled.ul`
     position: absolute;
     left: 0px;
     top: 56px;
-    max-height: ${({ minHeight }) => (minHeight ? minHeight : "0px")};
+    height: 600px;
     position: fixed;
     z-index: 999;
     width: 100%;
@@ -65,6 +65,8 @@ export const LinkWrapper = styled.ul`
     align-items: flex-start;
     overflow: hidden;
     transition: max-height 0.5s ease-in;
+    transition: transform 0.3s ease-in-out ;
+    transform: ${({translate})=> translate ? translate : 'translateX(-100%)'};
   }
 `;
 
@@ -80,7 +82,7 @@ export const NavLinks = styled.li`
   &::after {
     content: "";
     height: 1.2px;
-    background: black;
+    background: white;
     width: 100%;
     left: 0px;
     top: 100%;
@@ -123,10 +125,27 @@ export const CartSection = styled.div`
 `;
 
 export const CartText = styled(Text)`
+margin-left: 7px;
   @media screen and (max-width: 790px) {
     display: none;
   }
 `;
+export const CartNo = styled.div`
+position: absolute;
+z-index:1;
+top:0px;
+width: 25px;
+height: 25px;
+text-align: center;
+border-radius: 50%;
+background-color: black;
+display:grid;
+left: -20px;
+place-content: center;
+@media screen and (max-width: 790px) {
+    top: -25px;
+  }
+`
 
 export const MenuBarSection = styled.div`
   display: none;

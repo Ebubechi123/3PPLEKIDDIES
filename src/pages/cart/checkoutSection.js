@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import { Text } from "../../components/typography/typography.component";
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
 import { colorTheme } from "../../infrastructure/theme/colors";
+import GetTotalPrice from "../../infrastructure/utils/getTotalQuantity";
+
 
 const CheckSection = ({ ToggleHandler }) => {
-  let Subtotal = 500;
+  let Subtotal = GetTotalPrice()
+  // console.log(Subtotal)
   let deliveryAmount = 100;
   return (
     <>

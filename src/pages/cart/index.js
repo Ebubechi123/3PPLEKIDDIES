@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import FlexibleDiv from "../../components/flexibleDiv/flexibleDiv.component";
-import { OrderContainer, OrderWrapper } from "../../components/order/style";
-import { Text } from "../../components/typography/typography.component";
 import CartSection from "./cartSection";
 import CartOrder from "./checkOrder";
 import CheckSection from "./checkoutSection";
@@ -17,6 +15,7 @@ const Cart = () => {
     } else {
       window.document.body.style.overflow = "unset";
     }
+    window.scrollTo(0, 0)
   });
   return (
     <FlexibleDiv

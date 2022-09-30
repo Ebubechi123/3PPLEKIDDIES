@@ -1,9 +1,11 @@
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
+import GetTotalPrice from "../../infrastructure/utils/getTotalQuantity";
 import Button from "../button/button.component";
 import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import { Text } from "../typography/typography.component";
 
-const Proceed = ({ totalCost,padding,bottom,position }) => {
+const Proceed = ({ padding,bottom,position,productPrice }) => {
+  const totalCost = GetTotalPrice()
   return (
     <>
       <FlexibleDiv
@@ -27,7 +29,7 @@ const Proceed = ({ totalCost,padding,bottom,position }) => {
             fontSize={fontSizes.mobile_subtitle}
             resFontSize={fontSizes.mobile_details}
           >
-            N1200.00
+            N{totalCost || productPrice + 100}.00
           </Text>
           <Text margin={"0px"} fontSize={fontSizes.mobile_smallest}
            resFontSize={fontSizes.mobile_smallest}

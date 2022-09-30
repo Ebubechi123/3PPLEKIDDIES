@@ -8,10 +8,12 @@ import { HeaderText, Text } from "../typography/typography.component";
 export const ProductWrapper = styled.section`
 width: 100%;
 margin: 30px 0px;
+overflow-x: hidden;
 `
 export const ProductSectionStyle = styled.section`
 width: 100%;
 margin: 30px 0px;
+overflow-x: hidden;
 `
 
 export const ProductSectionTitle = styled(HeaderText)`
@@ -33,6 +35,18 @@ export const ProductPrice = styled(Text)`
 margin:0px;
 color:${colorTheme.black.strong};
 font-weight: 800;
+@media only screen and (max-width:380px){
+    font-size: medium;
+}
+`
+export const CountInStock = styled(Text)`
+margin:5px 0px;
+color:${colorTheme.black.strong};
+font-weight: 500;
+background:#01eb0161;
+
+border-radius: 5px;
+padding:5px;
 @media only screen and (max-width:380px){
     font-size: medium;
 }

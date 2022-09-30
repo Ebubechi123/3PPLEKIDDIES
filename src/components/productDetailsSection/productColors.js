@@ -14,7 +14,7 @@ const ColorBall = styled.div`
   cursor: default;
 `;
 
-const ProductColors = () => {
+const ProductColors = ({colors}) => {
   return (
     <>
       <FlexibleDiv padding={"20px 0px"}>

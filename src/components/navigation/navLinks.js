@@ -4,26 +4,7 @@ export const Nav_Links = [
     path: "/",
   },
   {
-    link: "Shop",
-    // subLink: [
-    //   {
-    //     link: "Female",
-    //     path: "/",
-    //   },
-    //   {
-    //     link: "Toys",
-    //     path: "/",
-    //   },
-    //   {
-    //     link: "Accessories",
-    //     path: "/",
-    //   },
-     
-    // ],
-  },
-  {
-    link: "About us",
-    path: "/",
+    link: "Male",
   },
   {
     link: "Female",
@@ -40,6 +21,10 @@ export const Nav_Links = [
  
   {
     link: "Contact",
-    path: "/",
+    path: "/contact",
+  },
+  {
+    link: "About us",
+    path: "/about",
   },
 ];

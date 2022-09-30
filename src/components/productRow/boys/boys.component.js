@@ -6,7 +6,17 @@ import ProductCard from '../productCard';
 import { ProductData } from '../productData';
 import { ProductRow, ProductSectionStyle, ProductSectionTitle } from '../style';
 
+import { useSelector } from 'react-redux';
+
 const Boys = () => {
+    const products = useSelector((state)=>state.products);
+    const data = products.data
+    let boys;
+    try {
+    boys =data.filter((e)=>e.category === "Boys" ).splice(0,4)
+    } catch (error) {
+     console.log(error.message)   
+    }
     return ( 
         <>
         <ProductSectionStyle>
@@ -19,9 +29,14 @@ const Boys = () => {
                     see all
                 </Text>
             </FlexibleDiv>
-            <ProductRow>
+            {/* <ProductRow>
                     {Object(ProductData).map(({img,title,price})=>(
                         <ProductCard img={img} title={title} price={price} product={ProductData} />
+                    ))}
+                </ProductRow> */}
+                <ProductRow>
+                    {boys?.map((product,{name,image,price,description})=>(
+                        <ProductCard key={product._id} title={name} price={price} img={image} product={product} />
                     ))}
                 </ProductRow>
         </ProductSectionStyle>

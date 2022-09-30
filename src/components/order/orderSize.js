@@ -13,7 +13,7 @@ export const Option = styled.option`
   padding: 12px;
   color: black;
 `;
-const OrderSize = () => {
+const OrderSize = ({productSizes}) => {
   return (
     <>
       <FlexibleDiv  flexBasis={"50%"} >
@@ -30,9 +30,10 @@ const OrderSize = () => {
           </FlexibleDiv>
           <FlexibleDiv width={'50%'} border={'1px solid lightgrey'} radius={"5px"} padding={"12px"} >
           <Select>
-            <Option>L</Option>
-            <Option>XL</Option>
-            <Option>XXL</Option>
+            {productSizes?.map((item,index)=>(
+              <Option key={index}>{item}</Option>
+            ))}
+            
           </Select>
           </FlexibleDiv>
         </FlexibleDiv>

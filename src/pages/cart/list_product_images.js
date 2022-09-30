@@ -16,6 +16,8 @@ import IMG7 from "../../assets/images/product-7.jpg"
 import IMG8 from "../../assets/images/product-8.jpg"
 import IMG9 from "../../assets/images/product-9.jpg"
 import IMG10 from "../../assets/images/product-10.jpg"
+import UrlFor from "../../infrastructure/utils/imageBuilder";
+import { useSelector } from "react-redux";
 const ListContainer = styled.ul`
   display: flex;
   width: 100%;
@@ -93,7 +95,7 @@ const LIST_PRODUCT_IMAGES = () => {
 
 
 
-
+    const products = useSelector((state) => state.persistedReducer.cart);
 
     const [dropDown, setDropDown] = useState(false);
     return (
@@ -103,6 +105,9 @@ const LIST_PRODUCT_IMAGES = () => {
           border={".9px solid lightgrey"}
           radius={"5px"}
           height={dropDown ? "auto" : "35.1px"}
+          breakPoint={"680px"}
+          breakPointwidth={"90%"}
+          onClick={() => setDropDown(!dropDown)}
         >
           <FlexibleDiv
             justifyContent={"space-between"}
@@ -130,9 +135,11 @@ const LIST_PRODUCT_IMAGES = () => {
               />
             )}
           </FlexibleDiv>
-          <ListContainer maxHeight={dropDown ? "auto" : "0px"} >
-            {imgs.map(({img,id})=>(
-                <Image key={id} src={img} width={'20%'} height={'20%'} radius={"5px"} objectFit={"cover"} />
+          <ListContainer maxHeight={dropDown ? "auto" : "0px"} onClick={(e)=>{
+            e.stopPropagation()
+          }} >
+            {products.map(({image,_id})=>(
+                <Image key={_id} src={UrlFor(image).url()} width={'20%'} height={'20%'} radius={"5px"} objectFit={"cover"} />
             ))}
           </ListContainer>
         </FlexibleDiv>

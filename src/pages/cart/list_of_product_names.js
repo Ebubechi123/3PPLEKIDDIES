@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import FlexibleDiv from "../../components/flexibleDiv/flexibleDiv.component";
 import { ArrowDownIcon, ArrowUpIcon } from "../../components/icons";
@@ -35,6 +36,7 @@ const List = styled.li`
 
 function LIST_OF_PRODUCT_NAMES({}) {
   const [dropDown, setDropDown] = useState(false);
+  const product = useSelector((state) => state.persistedReducer.cart);
   return (
     <FlexibleDiv margin={"12px 0px"} justifyContent={"flex-start"}>
       <FlexibleDiv
@@ -42,6 +44,9 @@ function LIST_OF_PRODUCT_NAMES({}) {
         border={".9px solid lightgrey"}
         radius={"5px"}
         height={dropDown ? "auto" : "35.1px"}
+        breakPoint={"680px"}
+        breakPointwidth={"90%"}
+        onClick={() => setDropDown(!dropDown)}
       >
         <FlexibleDiv
           justifyContent={"space-between"}
@@ -69,10 +74,16 @@ function LIST_OF_PRODUCT_NAMES({}) {
             />
           )}
         </FlexibleDiv>
-        <ListContainer maxHeight={dropDown ? "auto" : "0px"}>
-          <List>Red Gucci T-shirt</List>
+        <ListContainer maxHeight={dropDown ? "auto" : "0px"} onClick={(e)=>{
+            e.stopPropagation()
+          }} >
+          {/* <List>Red Gucci T-shirt</List>
           <List>Seven-By-Chacha children hoodie</List>
-          <List>Luis Vuitton Blue shorts</List>
+          <List>Luis Vuitton Blue shorts</List> */}
+          {product.map(({name})=>(
+            <List>{name}</List>
+          ))}
+        
         </ListContainer>
       </FlexibleDiv>
     </FlexibleDiv>

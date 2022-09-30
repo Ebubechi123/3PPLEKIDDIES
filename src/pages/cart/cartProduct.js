@@ -4,38 +4,34 @@ import CartImg from "../../assets/images/product-8.jpg";
 import { Text } from "../../components/typography/typography.component";
 import { fontSizes } from "../../infrastructure/theme/fontSizes";
 import { DeleteIcon } from "../../components/icons";
-import Input from "../../components/input/input.component";
 import { Option, Select } from "../../components/order/orderSize";
-import { useState } from "react";
-const CartProduct = () => {
-  const [quantity, setQauntity] = useState(1);
-  const InputHandler = (e) => {
-    let Value = e.target.value;
-    setQauntity(Value);
-  };
+import UrlFor from "../../infrastructure/utils/imageBuilder";
+import { useDispatch } from "react-redux";
+import { decrementQuantity, incrementQuantity, removeItem } from "../../state management/redux/slices/cartSlices";
+const CartProduct = ({product}) => {
+ let totalCost= product.price * product.quantity; //Total cost from no of quantity
+  const dispatch = useDispatch()
 
-  const Add = () => {
-    setQauntity(() => {
-      let sumValue = quantity + 1;
-      setQauntity(sumValue);
-    });
+  const Increment = (id) => {
+    dispatch(incrementQuantity(id))
   };
-  const Minus = () => {
-    if (quantity >= 0) {
-      let deletValue = quantity - 1;
-      setQauntity(deletValue);
-    }
+  const Decrement = (id) => {
+   dispatch(decrementQuantity(id))
   };
+  const RemoveItem =(id)=>{
+    dispatch(removeItem(id))
+  }
   return (
     <>
       <FlexibleDiv padding={"19px 19px"} alignItems={"flex-start"}>
         {/* Image */}
         <FlexibleDiv width={"20%"}>
           <Image
-            src={CartImg}
+           src={product ? UrlFor(product.image).url() : CartImg }
             width={"100%"}
             height={"100%"}
             objectFit={"cover"}
+            alt={product ? product.name:'product-image'}
             style={{ borderRadius: "5px" }}
           />
         </FlexibleDiv>
@@ -57,7 +53,7 @@ const CartProduct = () => {
                   fontSize={fontSizes.mobile_body_text}
                   resFontSize={"small"}
                 >
-                  Relaxed Fit T-shirt
+                 {product ? product.name : ' Relaxed Fit T-shirt'}
                 </Text>
               </FlexibleDiv>
               {/* Product price */}
@@ -69,7 +65,7 @@ const CartProduct = () => {
                   resFontSize={"x-small"}
                   fontWeight={"600"}
                 >
-                  N600.00
+                  N{product.price}.00
                 </Text>
               </FlexibleDiv>
             </FlexibleDiv>
@@ -82,7 +78,7 @@ const CartProduct = () => {
                 fontWeight={"700"}
                 resFontSize={"small"}
               >
-                N600.00
+                N{totalCost}.00
               </Text>
             </FlexibleDiv>
           </FlexibleDiv>
@@ -110,9 +106,10 @@ const CartProduct = () => {
                 padding={"5px"}
               >
                 <Select>
-                  <Option>Xl</Option>
-                  <Option>L</Option>
-                  <Option>LL</Option>
+                  <Option>Sizes</Option>
+                  {product.sizes.map((size,index)=>(
+                    <Option key={index} >{size}</Option>
+                  ))}
                 </Select>
               </FlexibleDiv>
 
@@ -144,27 +141,28 @@ const CartProduct = () => {
                     fontSize={".8rem"}
                     resFontSize={".8rem"}
                     onClick={() => {
-                      Minus();
+                      Decrement(product._id)
                     }}
                   >
                     -
                   </Text>
                 </FlexibleDiv>
                 <FlexibleDiv width={"30%"}>
-                  <Input
+                  {/* <Input
                     width={"100%"}
                     style={{ textAlign: "center" }}
                     type={"number"}
-                    value={quantity}
-                    onChange={(e) => {
-                      InputHandler(e);
-                    }}
-                  />
+                    value={product.quantity}
+                   
+                  /> */}
+                  <FlexibleDiv >
+                      {product.quantity}
+                  </FlexibleDiv>
                 </FlexibleDiv>
                 <FlexibleDiv width={"30%"}>
                   <Text
                     cursor={"pointer"}
-                    onClick={() => Add()}
+                    onClick={() => Increment(product._id)}
                     margin={"0px"}
                     fontSize={".8rem"}
                     resFontSize={".8rem"}
@@ -189,6 +187,9 @@ const CartProduct = () => {
                 resFontSize={"x-small"}
                 color={"#727272"}
                 fontWeight={"600"}
+                onClick={() => {
+                  RemoveItem(product._id)
+                }}
               >
                 Delete
               </Text>

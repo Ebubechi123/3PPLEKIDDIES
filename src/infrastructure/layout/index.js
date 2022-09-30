@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Footer from "../../components/footer/footer.component";
 import NavigationBar from "../../components/navigation/navigationBar";
 
 const LayoutStyle = styled.div`
@@ -24,6 +25,7 @@ const Layout = ({children}) => {
           <MainSection>
           {children}
           </MainSection>
+          <Footer/>
         </LayoutStyle>
         </>
      );

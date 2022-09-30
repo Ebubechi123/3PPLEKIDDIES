@@ -13,7 +13,7 @@ const Option = styled.option`
   padding: 12px;
   color: black;
 `;
-const OrderColor = () => {
+const OrderColor = (productColors) => {
     return ( 
         <>
         
@@ -31,9 +31,14 @@ const OrderColor = () => {
           </FlexibleDiv>
           <FlexibleDiv width={'50%'} border={'1px solid lightgrey'} radius={"5px"} padding={"12px"} >
           <Select>
-            <Option>Yellow</Option>
-            <Option>Purple</Option>
-            <Option>Red</Option>
+           {productColors.lenght>0? <>
+           {productColors[0]?.map((item,index)=>(
+            <Option key={index}>{item}</Option>
+           ))}
+           </>
+           :
+           <Option>No  Color</Option> 
+          }
           </Select>
           </FlexibleDiv>
         </FlexibleDiv>

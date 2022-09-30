@@ -41,6 +41,7 @@ transition: color .7s ease-in;
 text-overflow: ${({textOverflow})=>textOverflow ? textOverflow :''};
 white-space: ${({whiteSpace})=>whiteSpace ? whiteSpace :''};
 overflow: ${({overflow})=>overflow ? overflow :''};
+text-align: ${({textAlign})=>textAlign ? textAlign :''};
               /* whiteSpace: " nowrap",
               overflow: "hidden", */
 &:hover{

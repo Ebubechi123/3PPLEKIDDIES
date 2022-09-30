@@ -17,7 +17,7 @@ const Box = styled.div`
   cursor: default;
 `;
 
-const ProductSizes = () => {
+const ProductSizes = ({sizes}) => {
   return (
     <>
       <FlexibleDiv>
@@ -33,8 +33,8 @@ const ProductSizes = () => {
         </FlexibleDiv>
 
         <FlexibleDiv justifyContent={"flex-start"} gap={"12px"}>
-          {[0, 1, 2, 3, 4, 5, 6].map((index) => (
-            <Box key={index}>6-9 M</Box>
+          {sizes?.map((item,index) => (
+            <Box key={index}>{item}</Box>
           ))}
         </FlexibleDiv>
       </FlexibleDiv>

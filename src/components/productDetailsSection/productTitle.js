@@ -12,7 +12,7 @@ const ProductTitle = ({ title }) => {
           margin={"0px"}
           resFontSize={"1.5rem"}
         >
-          Charlie Cardi - Copper Marle
+         {title}
         </HeaderText>
       </FlexibleDiv>
     </>

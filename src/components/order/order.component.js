@@ -10,19 +10,24 @@ import OrderName from "./orderName";
 import PhoneNumber from "./phoneNumber";
 import Email from "./email";
 import Proceed from "./proceed";
+import { GetSingleProduct } from "../../state management/context/singleProduct";
 
 const Order = ({ toggleOrder, setToggleOrder }) => {
   const ToggleHandler = () => {
     setToggleOrder(false);
   };
-  useEffect(()=>{
+  useEffect(() => {
     if (toggleOrder) {
-        window.document.body.style.overflow="hidden"
+      window.document.body.style.overflow = "hidden";
+    } else {
+      window.document.body.style.overflow = "unset";
     }
-    else{
-        window.document.body.style.overflow="unset"
-    }
-  })
+  });
+  const [singleProduct] = GetSingleProduct();
+  let productName = singleProduct[0]?.name;
+  let productPrice = singleProduct[0]?.price;
+  let productSizes = singleProduct[0]?.sizes;
+  let productColors = singleProduct[0]?.colors;
   return (
     <>
       <OrderWrapper
@@ -39,22 +44,22 @@ const Order = ({ toggleOrder, setToggleOrder }) => {
           restransform={toggleOrder ? "translateY(0%)" : "translateY(100%)"}
         >
           <Title />
-          <OrderName />
+          <OrderName productName={productName} />
 
           <FlexibleDiv padding={"2px 0px"}>
-            <OrderPrice />
-            <OrderSize />
+            <OrderPrice productPrice={productPrice} />
+            <OrderSize productSizes={productSizes} />
           </FlexibleDiv>
 
           <FlexibleDiv padding={"23px 0px"}>
-            <OrderColor />
-            <OrderQuantity />
+            <OrderColor productColors={productColors} />
+            <OrderQuantity productPrice={productPrice} />
           </FlexibleDiv>
           <FlexibleDiv padding={"12px 0px"}>
-            <PhoneNumber/>
-            <Email/>
+            <PhoneNumber />
+            <Email />
           </FlexibleDiv>
-          <Proceed/>
+          <Proceed productPrice={productPrice} />
         </OrderContainer>
       </OrderWrapper>
     </>

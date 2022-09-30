@@ -29,7 +29,7 @@ const OrderQuantity = ({ productPrice }) => {
               resFontSize={"12px"}
               fontWeight={"700"}
             >
-              N500.00
+              N{productPrice}.00
             </Text>
             <CloseIcon size={12} />
           </FlexibleDiv>

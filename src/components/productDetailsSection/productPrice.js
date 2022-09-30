@@ -12,7 +12,7 @@ const ProductPrice = ({price}) => {
           margin={"0px"}
           fontWeight={"800"}
         >
-          N 500
+          N {price}
         </Text>
       </FlexibleDiv>
     </>

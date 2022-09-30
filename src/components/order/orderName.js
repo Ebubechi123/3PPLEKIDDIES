@@ -3,7 +3,7 @@ import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import Input from "../input/input.component";
 import { Text } from "../typography/typography.component";
 
-const OrderName = () => {
+const OrderName = ({productName}) => {
   return (
     <>
       <FlexibleDiv padding={"22px 0px"}>
@@ -19,7 +19,7 @@ const OrderName = () => {
             </Text>
           </FlexibleDiv>
           <Input
-            value={"Charlie Cardi-Copper Marle"}
+            value={productName}
             readOnly
             width={"70%"}
             padding={"12px"}

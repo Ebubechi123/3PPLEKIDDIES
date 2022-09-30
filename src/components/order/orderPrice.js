@@ -3,7 +3,7 @@ import FlexibleDiv from "../flexibleDiv/flexibleDiv.component";
 import Input from "../input/input.component";
 import { Text } from "../typography/typography.component";
 
-const OrderPrice = () => {
+const OrderPrice = ({productPrice}) => {
   return (
     <>
       <FlexibleDiv flexBasis={"50%"}>
@@ -19,7 +19,7 @@ const OrderPrice = () => {
             </Text>
           </FlexibleDiv>
           <Input
-            value={"N500"}
+            value={`N${productPrice}`}
             readOnly
             width={"50%"}
             padding={"12px"}
